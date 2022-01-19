@@ -129,4 +129,8 @@ btn4.addEventListener('click', (e)=>{
    
 });
 
+//oppgave 6
+
+//hente html elementer
+
 
