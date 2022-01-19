@@ -1,2 +1,2 @@
-# oppgave-3
+# Oppgave-3
  ## av Yahye Abdi
