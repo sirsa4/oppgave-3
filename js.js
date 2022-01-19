@@ -43,3 +43,4 @@ console.log(input,p3);
 input.addEventListener('input', function(){
     p3.innerHTML = input.value;
 });
+//resten av oppgaver her
