@@ -139,17 +139,6 @@ const stil = 'color: white; background-color: black;';
 ol.style.cssText = stil;
 /* console.log(ol.style.cssText); */
 
-//oppgave6
-document.addEventListener('click',(e)=>{
-    console.log(e.target);
-});
-
-//oppgave7
-
-//hente html elementer
-
-
-
 //oppgave 6
 //resource: lærte stund siden fra udemy guide med todolist project.
 //hente html elementer knapp og ul
@@ -166,3 +155,36 @@ removeUl.addEventListener('click', (e)=>{
     }
   
 });
+
+//oppgave7
+//source: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
+
+//hente html elementer
+//knapp
+const disableBtn = id('order');
+//input
+const fourLetterInputt = id('name');
+
+
+//variabel som lagrer verdier som blir skrevet på input.
+const inputValue = fourLetterInputt.value;
+
+//alle input verider blir gjort til strings, selv nummer.
+inputValue.toString();
+/* console.log(typeof inputValue); */
+
+
+
+//lytter funksjon
+const lytt = ()=>{;
+    //if som som sørger at knappen får property disabled når 4 tast
+    if(fourLetterInputt.value.length >= 4){
+        console.log('working');
+        disableBtn.disabled = true;
+        
+    }
+}
+
+//knapp lytter
+fourLetterInputt.addEventListener('input', lytt);
+
