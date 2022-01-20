@@ -1,10 +1,6 @@
 # Oppgave-0
  ## av Yahye Abdi
  
-<<<<<<< HEAD
- ## Oppgaver
- * [Oppgave-0}(https://github.com/sirsa4/oppgave-3/tree/oppgave-0)
-=======
 ### Oppgaver
     * 1: Lag lytteren og funksjonen som gjør at du kan fjerne et element med id #remove. Bruk knappen med id #remove-btn
     * 2: Bytt ut teksten i p med id #change med noe du selv velger. Bruk knappen med id #change-btn
@@ -14,4 +10,4 @@
     * 6: Lag lytteren til knappen med id #remove-li og funksjonen som gjør at du ved hvert klikk sletter et og et li element fra ul med id #list
     * 7: Lytt til tastaturklikk på inputboks med id #name. Lag funksjonen som sjekker om ordet er maksimum 4 bokstaver langt. Hvis du krysser 4 bokstaver gjør knappen med id #order disablet eller gi knappen en rød border
     * 8: Hent ut alle barna av ul med klasse .children. Gi oddetall-barna grønn border mens partall skal ha pink. Bruk knappen med id #color for å gjøre endringen.
->>>>>>> origin/oppgave-0
+    
