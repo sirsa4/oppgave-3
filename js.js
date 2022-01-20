@@ -132,13 +132,13 @@ btn4.addEventListener('click', (e)=>{
    
 });
 
-<<<<<<< HEAD
+
 //fra leksjonen intro javascript
 const ol = document.querySelector('ol');
 const stil = 'color: white; background-color: black;';
 ol.style.cssText = stil;
 /* console.log(ol.style.cssText); */
-=======
+
 //oppgave6
 document.addEventListener('click',(e)=>{
     console.log(e.target);
@@ -147,7 +147,6 @@ document.addEventListener('click',(e)=>{
 
 
 
->>>>>>> 5073a1887278d8496f408c4a59deda45c80a6903
 
 //oppgave 6
 //resource: lærte stund siden fra udemy guide med todolist project.
