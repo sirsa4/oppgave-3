@@ -52,6 +52,9 @@ input.addEventListener('input', function(){
     p3.innerHTML = input.value;
 });
 
+//resten av oppgavene her 
+
+
 //oppgave 4
 //resource: https://www.youtube.com/watch?v=80KX6aD9R7M&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&ab_channel=CodingAddict
 
@@ -129,11 +132,22 @@ btn4.addEventListener('click', (e)=>{
    
 });
 
+<<<<<<< HEAD
 //fra leksjonen intro javascript
 const ol = document.querySelector('ol');
 const stil = 'color: white; background-color: black;';
 ol.style.cssText = stil;
 /* console.log(ol.style.cssText); */
+=======
+//oppgave6
+document.addEventListener('click',(e)=>{
+    console.log(e.target);
+});
+
+
+
+
+>>>>>>> 5073a1887278d8496f408c4a59deda45c80a6903
 
 //oppgave 6
 //resource: lærte stund siden fra udemy guide med todolist project.
