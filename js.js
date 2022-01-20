@@ -22,11 +22,12 @@ const btn1 = id('remove-btn');
 const p1 = id('remove');
 
 //fjerne lytter for knapp1
-btn1.addEventListener('click', function(){
-    //fjern med remove(), innbygd funksjon i javascript.
-    p1.remove();
-   
-});
+btn1.addEventListener('click', fjern);
+
+function fjern(){
+     //fjern med remove(), innbygd funksjon i javascript.
+     p1.remove();
+}
 
 //oppgave 2
 
@@ -60,6 +61,7 @@ input.addEventListener('input', function(){
 
 //hente knappe og ul-tag
 const ul = id('ul');
+console.log(ul);
 const btn3 = id('write-list');
 
 btn3.addEventListener('click', ()=>{
@@ -68,8 +70,10 @@ btn3.addEventListener('click', ()=>{
     
     //map array som retunerer <li>-tagger med innhold som array items fra myList array, alle 4 verdier.
     let li = myList.map((list)=>{
-        return `<li>${list}</li>`;
+        return `<li>${list}</li>`; 
     });
+ 
+    
     //skrive ut <li>-taggene i ul-tag
     ul.innerHTML = li.join('');
 });
@@ -105,6 +109,7 @@ btn4.addEventListener('click', (e)=>{
         h2.innerHTML = value;
         
         div.appendChild(h2);
+        
         /* console.log(`<h2>${iinput.value}</h2>`); */
     }
     /* console.log(select.selectedIndex); */
@@ -141,19 +146,25 @@ ol.style.cssText = stil;
 
 //oppgave 6
 //resource: lærte stund siden fra udemy guide med todolist project.
-//hente html elementer knapp og ul
+//hente html elementer knapp og ul. Medstudent(jørgen) link:     e.target.firstElementChild.remove();.
 const removeUl = id('list');
 //adde klasse navn for å kunne contains() for fjerning av element
 removeUl.className = 'ul';
 const removeBtn = id('remove-li');
 
 //lytter satt på foreldre <ul>-tag for å ha mulig til å slette <li> barn
-removeUl.addEventListener('click', (e)=>{
+removeBtn.addEventListener('click', ()=>{
     /* removeUl.removeChild(list.childNodes[0]); */
-    if(e.target.parentElement.classList.contains('ul')){
+   /*  if(e.target.parentElement.classList.contains('ul')){
+        e.target.firstElementChild.remove();
+    } */
+  /*   if(e.target.parentElement.classList.contains('ul')){
         e.target.remove();
-    }
-  
+    } */
+   /*  removeUl.removeChild(removeUl.firstElementChild) */
+   if(removeUl.firstChild){
+       removeUl.removeChild(removeUl.firstChild);
+   } 
 });
 
 //oppgave7
@@ -172,15 +183,20 @@ const inputValue = fourLetterInputt.value;
 //alle input verider blir gjort til strings, selv nummer.
 inputValue.toString();
 /* console.log(typeof inputValue); */
-
+const btnCss = 'color: white; background-color: black; border: 5px solid red;';
 
 
 //lytter funksjon
 const lytt = ()=>{;
     //if som som sørger at knappen får property disabled når 4 tast
-    if(fourLetterInputt.value.length >= 4){
+    if(fourLetterInputt.value.length > 4){
         console.log('working');
+        disableBtn.style.cssText = btnCss;
         disableBtn.disabled = true;
+    } else {
+        disableBtn.disabled = false;
+        disableBtn.style.cssText = '';
+
         
     }
 }
@@ -188,3 +204,31 @@ const lytt = ()=>{;
 //knapp lytter
 fourLetterInputt.addEventListener('input', lytt);
 
+//oppgave 8
+//source: https://www.w3schools.com/cssref/sel_nth-child.asp
+//hente html elementer
+//ul
+const ul8 = document.querySelector('.children');
+/* console.log(ul8); */
+//knapp
+const btn8 = id('color');
+
+/*
+odd: grreen broder
+even: pink border 
+ */
+
+//hente odd og even
+let odd = ul8.querySelectorAll('li:nth-child(odd)');
+let even = ul8.querySelectorAll('li:nth-child(even)');
+
+
+//knapp som 
+btn8.addEventListener('click', ()=>{
+    odd.forEach(function(e){
+        e.style.border = '5px solid green';
+    });
+    even.forEach((e)=>{
+        e.style.border = '5px solid pink';
+    });
+});
