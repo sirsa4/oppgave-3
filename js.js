@@ -129,8 +129,25 @@ btn4.addEventListener('click', (e)=>{
    
 });
 
+//fra leksjonen intro javascript
+const ol = document.querySelector('ol');
+const stil = 'color: white; background-color: black;';
+ol.style.cssText = stil;
+/* console.log(ol.style.cssText); */
+
 //oppgave 6
+//resource: lærte stund siden fra udemy guide med todolist project.
+//hente html elementer knapp og ul
+const removeUl = id('list');
+//adde klasse navn for å kunne contains() for fjerning av element
+removeUl.className = 'ul';
+const removeBtn = id('remove-li');
 
-//hente html elementer
-
-
+//lytter satt på foreldre <ul>-tag for å ha mulig til å slette <li> barn
+removeUl.addEventListener('click', (e)=>{
+    /* removeUl.removeChild(list.childNodes[0]); */
+    if(e.target.parentElement.classList.contains('ul')){
+        e.target.remove();
+    }
+  
+});
