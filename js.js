@@ -144,7 +144,9 @@ document.addEventListener('click',(e)=>{
     console.log(e.target);
 });
 
+//oppgave7
 
+//hente html elementer
 
 
 
