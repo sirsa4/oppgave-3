@@ -1,7 +1,7 @@
 # Oppgave-3
  ## av Yahye Abdi
  
-## Oppgaver
+### Oppgaver
     * 1: Lag lytteren og funksjonen som gjør at du kan fjerne et element med id #remove. Bruk knappen med id #remove-btn
     * 2: Bytt ut teksten i p med id #change med noe du selv velger. Bruk knappen med id #change-btn
     * 3: Lag lytteren til input-boksen med id #input som gjør at du kan skrive ut teksten i inputboksen til en paragrafen med id #input-text
