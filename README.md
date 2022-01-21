@@ -1,5 +1,7 @@
 # Oppgave-1
- ## av Yahye Abdi, Mostafa, Jørgen
+ ## av [Yahye Abdi]()
+ ## [Mostafa](https://github.com/MostafaAliHaider)
+ ## [Jørgen](https://codesandbox.io/u/Gothmog)
  
 ### Oppgaver: Statisk tekst som brukes til å søke i
   * TODO: Gjør om text til array eks. ['Baby', 'cliche']
