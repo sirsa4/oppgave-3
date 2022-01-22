@@ -1,12 +1,16 @@
-# Oppgave-1
+# Oppgave-2
  ## av [Yahye Abdi]()
  ## [Mostafa](https://github.com/MostafaAliHaider)
  ## [Jørgen](https://codesandbox.io/u/Gothmog)
  ## [Ferat]()
+ ## [Tomine](https://github.com/tominekj)
  
 ### Oppgaver: Statisk tekst som brukes til å søke i
-  * TODO: Gjør om text til array eks. ['Baby', 'cliche']
-  * TODO: Velg første ord så du har noe å sammenlikne med
-  * TODO: Gå igjennom alle ordene og oppdater hvis nytt ord er lengre
+ * TODO: Hent HTML #id med getElementById
+* TODO: Lag en funksjon som kan brukes til å skrive ut HTMLen for å se brukerene. Du kan bruke users importert over for å hente en liste med 10 brukere
+* TODO: Lag en funksjon som håndterer søket og oppdaterer grensesnittet med resultatet fra søket
+* TODO: Lag en funksjon som håndterer filteret og oppdaterer grensesnittet med resultatet fra filteret
+* TODO: Lytt til tastatur klikk på søkefeltet, den skal trigge søkefunksjonen (handleSearch)
+* TODO: Lytt til klikk på filter-knappen, den skal trigge filterfunksjonen (handleFilter)
 
 
