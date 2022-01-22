@@ -1,3 +1,20 @@
+//Gruppe: yahye, mostafa, jørgen, ferat, tomine.
+//Hjelpe funksjoner
+
+//selektor funksjon for å unngå å skrive document.get/query hver gang man henter html element.
+const id = (select)=>{
+  const element = document.querySelector(select);
+  if(element){
+    return element;
+  }
+  //error for når html element ikke finnes
+  throw new Error(`The element:"${select} does not exist"`);
+}
+//create funksjon
+const create = (html)=>{
+  const crt = document.createElement(html)
+  return crt;
+}
 //hente html element, div boks med ID "app"
 const div = id('div');
 
@@ -21,14 +38,29 @@ const longestWord = () => {
   // TODO: Velg første ord så du har noe å sammenlikne med
   // TODO: Gå igjennom alle ordene og oppdater hvis nytt ord er lengre
   /* 
-    * 1: i if test som skjekker om variabel "holder" length er mindre enn array variabel "array" sin neste item sin length. Neste item byttes med at teller variabel inkr
+    * 1: i if test som skjekker om variabel "holder" length er mindre enn array variabel "array" sin neste item sin length. Når løkket kjører gjennom hele array og gir variabelen "holder" nye verdier og når den havner på lengste ordet og ikke finner større item i array enn 'verylongwordthatislong', da skrives skrives i variabel 'div' med innerText lengest ordet i arrayet
   */
-  array.forEach( word => {
+
+ //med forEach() metode
+/*   array.forEach( word => {
     if (holder.length < word.length) {
       holder = word;
+      div.innerText = holder;
       console.log(holder);
     }
-});
+}); */
+
+//med for of loop
+for(let word of array){
+  //if statement check som kjører gjennom hele array
+  if(holder.length < word.length){
+    //holder verdi blir byttet verdiene som loopet kjører gjennom
+    holder = word;
+    //skrives ut i DOM med med innerText
+    div.innerText = holder;
+    console.log(holder);
+  }
+}
 
 }
 //kjøre funksjon
