@@ -2,6 +2,7 @@
  ## av [Yahye Abdi]()
  ## [Mostafa](https://github.com/MostafaAliHaider)
  ## [Jørgen](https://codesandbox.io/u/Gothmog)
+ ## [Ferat]()
  
 ### Oppgaver: Statisk tekst som brukes til å søke i
   * TODO: Gjør om text til array eks. ['Baby', 'cliche']
