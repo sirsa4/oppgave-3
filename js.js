@@ -26,63 +26,69 @@ const users = [
 ];
 
 // TODO: Hent HTML #id med getElementById
+const searchInput = id("#name");
+const filterInput = id("#age");
+const filterButton = id("#filter");
+
 const userUl = id("#users");
-//hente inputer og knapp
-const userName = id('#name'); //navn søk input
-const userAge = id('#age'); //user alder input
-const filterBtn = id('#filter'); //filter knapp
 
-
-
-
-// TODO: Lag en funksjon som kan brukes til å skrive ut HTMLen for å se brukerene. Du kan bruke users importert over for å hente en liste med 10 brukere
-
-//fra hjelp fil: user funksjon som lager html elementer fra 'users' array.
 const createTableUI = (users) => {
-  //ul innerHTML blir satt null sånn at det ingen i der
   userUl.innerHTML = null;
-  //først raden blir satt 'users' array med template literals.
   userUl.innerHTML += `<li><span>Id</span><span>Navn</span><span>Alder</span></li>`;
-  //for of løkke som lager li elementene. Den plusser ny li uten å fjerne den første som har veridene id, navn og alder.
   for (const user of users) {
     userUl.innerHTML += `<li><span>${user.id}</span><span>${user.name}</span><span>${user.age}</span></li>`;
   }
 };
 
-// TODO: Lag en funksjon som håndterer søket og oppdaterer grensesnittet med resultatet fra søket
-const ageSearch = userAge.value
-console.log(ageSearch);
-const search = ()=>{
-  const searchName = userName.value;
-  
-  
-  if(searchName){
+const handleSearch = () => {
+  // TODO: Hent ut verdien fra søke input feltet
+  const searchName = searchInput.value;
+  // TODO: Sjekk om searchName ekisterer(i liste)
+  if (searchName) {
    
-    /* userUl.innerHTML = `${searchName}`; */
-    users.find((item)=>{
-      if(item.name === searchName){
-        userUl.innerHTML = `<li><span>${item.id}</span><span>${item.name}</span><span>${item.age}</span><li>`;
-      } else {
-        console.log('hi');
+    // TODO: Bruk .find for å finne navnet til den brukeren som matcher søkeordet
+    const searchResult = users.find((user)=>{
+
+      if(searchName.toLowerCase() === user.name.toLowerCase()){
+        console.log(`${user.name}`);
+        userUl.innerHTML = `<li><span>${user.id}</span><span>${user.name}</span><span>${user.age}</span></li>`;
       }
-    })
-
+    });
+    // TODO: Sjekk som resultatet eksisterer
+    if ("") {
+      // TODO: Oppdatere grensesnittet med createTableUI og resultatet av søket
+    } else {
+      // TODO: Oppdatere grensesnittet med userUl.innerHTML og en passende tekst når vi ikke finner noe
+    }
+  } else {
+    // TODO: Hvis ingen søkeord vis default liste med brukere via createTableUI
   }
-}
+};
 
-// TODO: Lag en funksjon som håndterer filteret og oppdaterer grensesnittet med resultatet fra filteret
-const filterSearch = ()=>{
-  search()
-  userName.addEventListener('keyup', search);
-
-}
-// TODO: Lytt til tastatur klikk på søkefeltet, den skal trigge søkefunksjonen (handleSearch)
-/* userName.addEventListener('keyup', search); */
-// TODO: Lytt til klikk på filter-knappen, den skal trigge filterfunksjonen (handleFilter)
-filterBtn.addEventListener('click', filterSearch);
+const handleFilter = () => {
+  // TODO: Hent ut verdien fra filter input feltet
+  const filterValue = "";
+  // TODO: Sjekk om filterVerdien ekisterer og er et tall
+  if ("") {
+    // TODO: Bruk .filter for å hente ut de brukeren  som har en alder høyere en filterverdien
+    const filterResult = "";
+    // TODO: Sjekk om det er noe resultat og at legnden er større enn null
+    if ("") {
+      // TODO: Oppdatere grensesnittet med createTableUI og resultatet av filteret
+    } else {
+      // TODO: Oppdatere grensesnittet med userUl.innerHTML og en passende tekst når vi ikke finner noe
+    }
+  } else {
+    // TODO: Hvis ingen filter eller filteret ikke er et tall vis default liste med brukere via createTableUI
+  }
+};
 
 const main = () => {
   createTableUI(users);
 };
 
 main();
+
+// TODO: Lytt til tastatur klikk på søkefeltet, den skal trigge søkefunksjonen (handleSearch)
+searchInput.addEventListener('keyup', handleSearch);
+// TODO: Lytt til klikk på filter-knappen, den skal trigge filterfunksjonen (handleFilter)
