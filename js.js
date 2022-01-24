@@ -47,39 +47,66 @@ const handleSearch = () => {
   if (searchName) {
    
     // TODO: Bruk .find for å finne navnet til den brukeren som matcher søkeordet
-    const searchResult = users.find((user)=>{
+/*     const searchResult = users.find(user =>{
 
       if(searchName.toLowerCase() === user.name.toLowerCase()){
         console.log(`${user.name}`);
         userUl.innerHTML = `<li><span>${user.id}</span><span>${user.name}</span><span>${user.age}</span></li>`;
-      }
-    });
-    // TODO: Sjekk som resultatet eksisterer
+      } */
+      const searchResult = users.find((user) => {
+        // TODO: Sjekk som resultatet eksisterer
+    if (searchName.toLowerCase() === user.name.toLowerCase()){
+      // TODO: Oppdatere grensesnittet med createTableUI og resultatet av søket
+      console.log(user.age);
+      userUl.innerHTML = `<li><span>${user.id}</span><span>${user.name}</span><span>${user.age}</span></li>`;
+
+    }   
+      });
+    
+
+  /*   // TODO: Sjekk som resultatet eksisterer
     if ("") {
       // TODO: Oppdatere grensesnittet med createTableUI og resultatet av søket
     } else {
       // TODO: Oppdatere grensesnittet med userUl.innerHTML og en passende tekst når vi ikke finner noe
-    }
-  } else {
+    } */
+  } 
     // TODO: Hvis ingen søkeord vis default liste med brukere via createTableUI
+    
+   else {
+    createTableUI(users);
+    console.log('wrong');
+   
   }
 };
 
 const handleFilter = () => {
   // TODO: Hent ut verdien fra filter input feltet
-  const filterValue = "";
+  let filterValue = filterInput.value;
   // TODO: Sjekk om filterVerdien ekisterer og er et tall
-  if ("") {
+  if (filterValue) {
+    
     // TODO: Bruk .filter for å hente ut de brukeren  som har en alder høyere en filterverdien
-    const filterResult = "";
+    const filterResult = users.filter((user)=>{
+      return user.age <= filterValue;
+    });
+    
     // TODO: Sjekk om det er noe resultat og at legnden er større enn null
-    if ("") {
+    if (filterResult) {
       // TODO: Oppdatere grensesnittet med createTableUI og resultatet av filteret
+   const newFilter = filterResult.map((user)=>{
+    return `<li><span>${user.id}</span><span>${user.name}</span><span>${user.age}</span></li>`;
+   });
+   userUl.innerHTML = newFilter.join(' ');
+   filterInput.value = '';
+      
     } else {
       // TODO: Oppdatere grensesnittet med userUl.innerHTML og en passende tekst når vi ikke finner noe
+      
     }
   } else {
     // TODO: Hvis ingen filter eller filteret ikke er et tall vis default liste med brukere via createTableUI
+    createTableUI(users);
   }
 };
 
@@ -92,3 +119,4 @@ main();
 // TODO: Lytt til tastatur klikk på søkefeltet, den skal trigge søkefunksjonen (handleSearch)
 searchInput.addEventListener('keyup', handleSearch);
 // TODO: Lytt til klikk på filter-knappen, den skal trigge filterfunksjonen (handleFilter)
+filterButton.addEventListener('click', handleFilter);
